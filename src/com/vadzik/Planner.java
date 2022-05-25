@@ -8,7 +8,6 @@ public class Planner implements Runnable {
 
     static final ArrayList<planThread> planning = new ArrayList<>();
     private final static Object lock = new Object();
-    static private final Object canPause = new Object();
     static int quantum = 2;
     static Thread[] planningThreads = new Thread[3];
     static boolean isPause = false;

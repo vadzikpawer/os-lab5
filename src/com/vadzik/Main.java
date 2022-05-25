@@ -18,31 +18,27 @@ public class Main {
             printMenu();
             System.out.print("Введите пункт меню: ");
             int option = in.nextInt();
-            switch (option){
-                case 1:
+            switch (option) {
+                case 1 -> {
                     Planner.showThreads();
                     System.out.print("Введите номер процесса для приостановки\\возобновления: ");
                     int num = in.nextInt();
-                    Planner.pauseTask(num-1);
-                    break;
-                case 2:
+                    Planner.pauseTask(num - 1);
+                }
+                case 2 -> {
                     Planner.showThreads();
                     System.out.print("Введите номер процесса для изменения приоритета: ");
                     int numTh = in.nextInt();
                     System.out.print("Введите новое значение приоритета процесса: ");
                     int prTh = in.nextInt();
-                    Planner.changePriority(numTh-1, prTh);
-                    break;
-                case 3:
-                    Planner.showThreads();
-                    break;
-                case 4:
+                    Planner.changePriority(numTh - 1, prTh);
+                }
+                case 3 -> Planner.showThreads();
+                case 4 -> {
                     isExit = true;
                     planner.exit();
-                    break;
-                default:
-                    System.out.print("Введен неверный вариант!!!\n\n");
-                    break;
+                }
+                default -> System.out.print("Введен неверный вариант!!!\n\n");
             }
         }
 
